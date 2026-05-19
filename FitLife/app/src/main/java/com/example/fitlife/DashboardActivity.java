@@ -16,7 +16,6 @@ public class DashboardActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dashboard);
 
-        // Arayüz elemanlarını Java değişkenlerine bağlıyoruz
         tvGirilenler = findViewById(R.id.tvGirilenler);
         tvVki = findViewById(R.id.tvVki);
         tvIdealKilo = findViewById(R.id.tvIdealKilo);
@@ -25,7 +24,6 @@ public class DashboardActivity extends AppCompatActivity {
         tvDurumYazisi = findViewById(R.id.tvDurumYazisi);
         btnTekrarHesapla = findViewById(R.id.btnTekrarHesapla);
 
-        // İlk ekrandan gönderilen verileri yakalıyoruz
         Bundle extras = getIntent().getExtras();
         if (extras != null) {
             String boyStr = extras.getString("USER_BOY", "175");
@@ -53,7 +51,7 @@ public class DashboardActivity extends AppCompatActivity {
             }
             tvDurumYazisi.setText("Durum: " + durum);
 
-            // 2. İdeal Kilo Hesaplama (Devine Formülü)
+            // 2. İdeal Kilo Hesaplama
             double idealKilo;
             if (cinsiyet.equals("Erkek")) {
                 idealKilo = 50.0 + 2.3 * ((boyCm / 2.54) - 60);
@@ -62,25 +60,24 @@ public class DashboardActivity extends AppCompatActivity {
             }
             tvIdealKilo.setText(String.format(Locale.US, "İdeal Kilonuz: %.1f kg", idealKilo));
 
-            // 3. Yağ Oranı Hesaplama (Ortalama aktif insan için optimize edilmiş Deurenberg)
+            // 3. Yağ Oranı Hesaplama
             int cinsiyetKatsayi = cinsiyet.equals("Erkek") ? 1 : 0;
             double yagOrani = (1.20 * vki) + (0.23 * 22) - (10.8 * cinsiyetKatsayi) - 5.4 - 4.0;
 
             if (yagOrani < 5) yagOrani = 8.0; // Mantıksal alt sınır
             tvYagOrani.setText(String.format(Locale.US, "Tahmini Yağ Oranı: %%%.1f", yagOrani));
 
-            // 4. Yağsız Vücut Kütlesi Hesaplama (Toplam Kilo - Yağ Kütlesi)
+            // 4. Yağsız Vücut Kütlesi Hesaplama
             double yagKutlesi = kilo * (yagOrani / 100.0);
             double yagsizKutle = kilo - yagKutlesi;
             tvYagsizKutle.setText(String.format(Locale.US, "Yağsız Vücut Kütlesi: %.1f kg", yagsizKutle));
 
-            // Üst özet metni
             tvGirilenler.setText("Boy: " + boyStr + " cm  |  Kilo: " + kiloStr + " kg  |  " + cinsiyet);
         }
 
-        // Tekrar Hesapla (Geri Dön) Buton Aksiyonu
+        // Tekrar Hesapla Buton
         btnTekrarHesapla.setOnClickListener(v -> {
-            finish(); // Bu ekranı kapatıp MainActivity'e kayıpsız döner
+            finish(); //
         });
     }
 }

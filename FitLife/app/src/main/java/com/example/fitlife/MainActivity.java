@@ -21,7 +21,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // Elemanları bağlıyoruz
         etBoy = findViewById(R.id.etBoy);
         etKilo = findViewById(R.id.etKilo);
         rgCinsiyet = findViewById(R.id.rgCinsiyet);
@@ -32,13 +31,11 @@ public class MainActivity extends AppCompatActivity {
             String boy = etBoy.getText().toString();
             String kilo = etKilo.getText().toString();
 
-            // Hangi butonun seçili olduğunu kontrol ediyoruz
             String secilenCinsiyet = rbErkek.isChecked() ? "Erkek" : "Kadın";
 
             if (boy.isEmpty() || kilo.isEmpty()) {
                 Toast.makeText(MainActivity.this, "Lütfen tüm bilgileri eksiksiz girin!", Toast.LENGTH_SHORT).show();
             } else {
-                // Verileri ikinci ekrana gönderiyoruz
                 Intent intent = new Intent(MainActivity.this, DashboardActivity.class);
                 intent.putExtra("USER_BOY", boy);
                 intent.putExtra("USER_KILO", kilo);

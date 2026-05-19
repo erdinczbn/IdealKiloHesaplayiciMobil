@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="24dp"
+    android:gravity="center_vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="ANALİZ SONUÇLARI"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_marginBottom="24dp"/>
+
+    <!-- Girilen Bilgiler -->
+    <TextView
+        android:id="@+id/tvGirilenler"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Boy: -- cm | Kilo: -- kg"
+        android:textSize="15sp"
+        android:gravity="center"
+        android:layout_marginBottom="24dp"/>
+
+    <!-- 1. Vücut Kitle İndeksi -->
+    <TextView
+        android:id="@+id/tvVki"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Vücut Kitle İndeksi (VKİ): --"
+        android:textSize="16sp"
+        android:layout_marginBottom="12dp"/>
+
+    <!-- 2. İdeal Kilo -->
+    <TextView
+        android:id="@+id/tvIdealKilo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="İdeal Kilonuz: -- kg"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="12dp"/>
+
+    <!-- 3. Yağ Oranı -->
+    <TextView
+        android:id="@+id/tvYagOrani"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Tahmini Yağ Oranı: %--"
+        android:textSize="16sp"
+        android:layout_marginBottom="12dp"/>
+
+    <!-- 4. Yağsız Kütle -->
+    <TextView
+        android:id="@+id/tvYagsizKutle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Yağsız Vücut Kütlesi: -- kg"
+        android:textSize="16sp"
+        android:layout_marginBottom="12dp"/>
+
+    <!-- Sağlık Durumu Özeti -->
+    <TextView
+        android:id="@+id/tvDurumYazisi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Durum: --"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="40dp"/>
+
+    <!-- Geri Dönüş Butonu -->
+    <Button
+        android:id="@+id/btnTekrarHesapla"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Yeniden Hesapla (Geri Dön)"
+        android:textSize="16sp" />
+
+</LinearLayout>

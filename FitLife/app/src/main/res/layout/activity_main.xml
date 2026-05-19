@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="24dp"
+    android:gravity="center_vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="İdeal Kilo Hesaplayıcı"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_marginBottom="32dp"/>
+
+    <!-- Boy Girişi -->
+    <EditText
+        android:id="@+id/etBoy"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Boyunuzu Giriniz (Örn: 175 cm)"
+        android:inputType="number"
+        android:layout_marginBottom="16dp"/>
+
+    <!-- Kilo Girişi -->
+    <EditText
+        android:id="@+id/etKilo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Mevcut Kilonuz (Örn: 75 kg)"
+        android:inputType="number"
+        android:layout_marginBottom="24dp"/>
+
+    <!-- Cinsiyet Seçim Başlığı -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Cinsiyetiniz:"
+        android:textSize="16sp"
+        android:layout_marginBottom="8dp"/>
+
+    <!-- RadioGroup: Butonları bir arada tutar ve tekli seçim yaptırır -->
+    <RadioGroup
+        android:id="@+id/rgCinsiyet"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="32dp">
+
+        <RadioButton
+            android:id="@+id/rbErkek"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Erkek"
+            android:checked="true"
+            android:layout_weight="1"/>
+
+        <RadioButton
+            android:id="@+id/rbKadin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Kadın"
+            android:layout_weight="1"/>
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/btnHesapla"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="İdeal Kilomu Hesapla"
+        android:textSize="16sp"/>
+
+</LinearLayout>
